@@ -1,10 +1,11 @@
 ﻿using System;
 namespace cats_and_dogs
 {
-    public class Fork
+    public class Fork : ICloseCombat
     {
-        public Fork()
+        public void Speech()
         {
+            Console.WriteLine("Не бойся ложки, бойся Вилки - один удар - четыре дырки");
         }
     }
 }

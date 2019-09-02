@@ -19,6 +19,40 @@ namespace cats_and_dogs
             pastuhPastbishe.AddWolf += pastuh.Attention;
             pastuh.Come += pastuhPastbishe.PastuhCome;
 
+            Fork fork = new Fork();
+            LightSaber lightSaber = new LightSaber();
+            Dagger dagger = new Dagger();
+            Flamethrower flamethrower = new Flamethrower();
+            MiniGun miniGun = new MiniGun();
+            HeavyMortars heavyMortars = new HeavyMortars();
+
+            PastuhWithWeapon<Fork> pastuhFork = new PastuhWithWeapon<Fork>
+            {
+                Combat = fork
+            };
+            PastuhWithWeapon<LightSaber> pastuhLightSaber = new PastuhWithWeapon<LightSaber>
+            {
+                Combat = lightSaber
+            };
+            PastuhWithWeapon<Dagger> pastuhDagger = new PastuhWithWeapon<Dagger>
+            {
+                Combat = dagger
+            };
+            PastuhWithWeapon<Flamethrower> pastuhFlamethrower = new PastuhWithWeapon<Flamethrower>
+            {
+                Combat = flamethrower
+            };
+            PastuhWithWeapon<MiniGun> pastuhMiniGun = new PastuhWithWeapon<MiniGun>
+            {
+                Combat = miniGun
+            };
+            PastuhWithWeapon<HeavyMortars> pastuhHeavyMortars = new PastuhWithWeapon<HeavyMortars>
+            {
+                Combat = heavyMortars
+            };
+
+
+
             do
             {
                 var random = new Random();

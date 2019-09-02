@@ -1,10 +1,11 @@
 ﻿using System;
 namespace cats_and_dogs
 {
-    public class HeavyMortars
+    public class HeavyMortars : ILongRageCombat
     {
-        public HeavyMortars()
+        public void Speech()
         {
+            Console.WriteLine("Прицел 120 трубка 15, словом Бац-Бац... и мимо");
         }
     }
 }

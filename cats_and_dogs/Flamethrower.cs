@@ -1,10 +1,11 @@
 ﻿using System;
 namespace cats_and_dogs
 {
-    public class Flamethrower
+    public class Flamethrower : ILongRageCombat
     {
-        public Flamethrower()
+        public void Speech()
         {
+            Console.WriteLine("Люблю запах напалма по утрам");
         }
     }
 }

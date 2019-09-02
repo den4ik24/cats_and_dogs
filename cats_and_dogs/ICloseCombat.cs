@@ -1,10 +1,8 @@
 ﻿using System;
 namespace cats_and_dogs
 {
-    public interface ICloseCombat
+    public interface ICloseCombat : IWeapon
     {
-        void Fork();
-        void LightSaber();
-        void Dagger();
+        
     }
 }
