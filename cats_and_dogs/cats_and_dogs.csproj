@@ -13,5 +13,7 @@
     <Compile Remove="Interface.cs" />
     <Compile Remove="IAddWolf.cs" />
     <Compile Remove="IPastbishe.cs" />
+    <Compile Remove="IVulnerabilityCloseWeapon.cs" />
+    <Compile Remove="IVulnerabilityLongRageWeapon.cs" />
   </ItemGroup>
 </Project>

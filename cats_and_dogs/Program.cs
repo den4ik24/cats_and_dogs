@@ -26,6 +26,9 @@ namespace cats_and_dogs
             MiniGun miniGun = new MiniGun();
             HeavyMortars heavyMortars = new HeavyMortars();
 
+            VulnerabilityCloseWeapon vulnerabilityCloseWeapon = new VulnerabilityCloseWeapon();
+            VulnerabilityLongRageWeapon vulnerabilityLongRageWeapon = new VulnerabilityLongRageWeapon();
+
             PastuhWithWeapon<Fork> pastuhFork = new PastuhWithWeapon<Fork>
             {
                 Combat = fork
@@ -52,6 +55,14 @@ namespace cats_and_dogs
             };
 
 
+            CyberWolf<VulnerabilityCloseWeapon> cyberWolfVulnerabilityCloseWeapon = new CyberWolf<VulnerabilityCloseWeapon>
+            {
+                Vulnerability = vulnerabilityCloseWeapon
+            };
+            CyberWolf<VulnerabilityLongRageWeapon> cyberWolfVulnerabilityLongWeapon = new CyberWolf<VulnerabilityLongRageWeapon>
+            {
+                Vulnerability = vulnerabilityLongRageWeapon
+            };
 
             do
             {
