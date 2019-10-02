@@ -21,7 +21,6 @@ namespace cats_and_dogs
             N =  pastuhName[pastuhNameIndex];
             Console.WriteLine();
             Console.WriteLine($@"Берегитесь ""Санитары леса""! Пастух {pastuhName[pastuhNameIndex]} спешит на помощь.");
-            //Console.WriteLine("У волков осталось два хода до прибытия Пастуха");
             Console.WriteLine();
             Singleton.Instance.PassNotice += Go;
             
@@ -44,10 +43,10 @@ namespace cats_and_dogs
                 Singleton.Instance.PassNotice -= Go;
                 step = 0;
             }
-            
-            Console.WriteLine($"прошло {step} шагов");
+            if (step > 0)
+            {
+                Console.WriteLine($"Пастух прибудет через {step} ход");
+            }
         }
-
-      
     }
 }

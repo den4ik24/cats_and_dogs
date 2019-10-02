@@ -42,7 +42,7 @@ namespace cats_and_dogs
         private void SheepTempCountMessage()
         {
             StringBuilder temp = new StringBuilder();
-            foreach (var ovca in Sheeps)
+            foreach (var ovwca in Sheeps)
             {
                 temp.Append(ovca);
             }

@@ -15,9 +15,10 @@ namespace cats_and_dogs
             ConsoleKeyInfo key;
 
             Pastuh pastuh = new Pastuh();
-            PastuhPastbishe pastuhPastbishe = new PastuhPastbishe();
-            pastuhPastbishe.AddWolf += pastuh.Attention;
-            pastuh.Come += pastuhPastbishe.PastuhCome;
+            NewPastbishe newPastbishe = new NewPastbishe();
+            newPastbishe.AddWolf += pastuh.Attention;
+            pastuh.Come += newPastbishe.PastuhCome;
+
 
             Fork fork = new Fork();
             LightSaber lightSaber = new LightSaber();
@@ -67,23 +68,19 @@ namespace cats_and_dogs
             do
             {
                 var random = new Random();
-
                 var sheepsName = new List<string> { "Чернявка ", "Звездочка ", "Бяшка ", "Кучерявая " };
-                var wolfsName = new List<string> { "Серый ", "Грозный ", "Акелла ", "Ракша ", "Рваный ", "Кривой " };
-
                 int SheepNameIndex = random.Next(sheepsName.Count);
-                int WolfNameIndex = random.Next(wolfsName.Count);
-
+                
                 key = Console.ReadKey(true);
 
                 if (key.Key == ConsoleKey.W)
                 {
-                    pastuhPastbishe.Add(new Wolf { Name = wolfsName[WolfNameIndex] });
+                    newPastbishe.Add(CreateWolf());
                 }
 
                 if (key.Key == ConsoleKey.S)
                 {
-                    pastuhPastbishe.Add(new Sheep { Name = sheepsName[SheepNameIndex] });
+                    newPastbishe.Add(new Sheep { Name = sheepsName[SheepNameIndex] });
                 }
 
                 if (key.Key == ConsoleKey.W || key.Key == ConsoleKey.S)
@@ -94,6 +91,27 @@ namespace cats_and_dogs
             }
             while (key.Key != ConsoleKey.Escape);
 
+        }
+
+        static Wolf CreateWolf()
+        {
+            var random = new Random();
+
+
+            var wolfsName = new List<string> { "Серый ", "Грозный ", "Акелла ", "Ракша ", "Рваный ", "Кривой " };
+            int WolfNameIndex = random.Next(wolfsName.Count);
+            int CyberWolfVuln = random.Next(2);
+
+            if (CyberWolfVuln == 0)
+            {
+                return new CyberWolf<VulnerabilityCloseWeapon> { Name = wolfsName[WolfNameIndex] };
+            }
+
+            if (CyberWolfVuln == 1)
+            {
+                return new CyberWolf<VulnerabilityLongRageWeapon> { Name = wolfsName[WolfNameIndex] };
+            }
+            throw new IndexOutOfRangeException("Not possible");
         }
 
     }
