@@ -10,5 +10,10 @@ namespace cats_and_dogs
         {
             Combat.Speech();
         }
+
+        protected override void BattleRoar()
+        {
+            Combat.Speech();
+        }
     }
 }

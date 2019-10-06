@@ -7,38 +7,31 @@ namespace cats_and_dogs
     {
 
         int step;
-        public List <string> pastuhName = new List<string> { "Пал Палыч", "Тимофей Емельянович", "Федор Дмитриевич", "Олег Николаевич" };
+        public List <string> pastuhName = new List<string> { "Пал Палыч", "Тимофей Емельянович", "Федор Димитриевич", "Олег Николаевич" };
         public Random random = new Random();
         string N;
-
-        public delegate void MethodContainer();
-        public event MethodContainer Come;
-        
 
         public void Attention()
         {
             int pastuhNameIndex = random.Next(pastuhName.Count);
             N =  pastuhName[pastuhNameIndex];
             Console.WriteLine();
-            Console.WriteLine($@"Берегитесь ""Санитары леса""! Пастух {pastuhName[pastuhNameIndex]} спешит на помощь.");
+            Console.WriteLine($@"Берегитесь ""Санитары леса""! Пастух {N} спешит на помощь.");
             Console.WriteLine();
-            Singleton.Instance.PassNotice += Go;
-            
+            Singleton.Instance.PassNotice += Go;  
         }
 
+        public delegate void MethodContainer();
+        public event MethodContainer GoPastuh;
+        
         public void Go()
         {
             step++;
 
             if (step == 2)
             {
-   
-                Console.WriteLine($@"Пастух {N} прибыл на пастбище - ""Пятачок, неси ружье! "" ");
-                Console.WriteLine();
-                
-                {
-                    Come?.Invoke();
-                }
+                GoPastuh?.Invoke();
+                BattleRoar();
 
                 Singleton.Instance.PassNotice -= Go;
                 step = 0;
@@ -47,6 +40,12 @@ namespace cats_and_dogs
             {
                 Console.WriteLine($"Пастух прибудет через {step} ход");
             }
+        }
+
+        protected virtual void BattleRoar()
+        {
+            Console.WriteLine($@"Пастух {N} прибыл на пастбище - ""Пятачок, неси ружье! "" ");
+            Console.WriteLine();
         }
     }
 }

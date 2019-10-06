@@ -5,9 +5,9 @@ namespace cats_and_dogs
 {
     public class PastuhPastbishe : Pastbishe
     {
-        public delegate void WolfCome();
+        public delegate void MethodContainer();
         //делегат, хранящий в себе ссылку на метод
-        public event WolfCome AddWolf;
+        public event MethodContainer AddWolf;
         //событие связываем с делегатом, потом запускаем это событие
 
         public override void Add(IPastbisheAnimal animal)
@@ -19,7 +19,7 @@ namespace cats_and_dogs
             }
         }
 
-        public void PastuhCome()
+        public void WolvesCount()
         {
             var wolfSkin = "";
             if (Wolves.Count == 1|| Wolves.Count == 21)
