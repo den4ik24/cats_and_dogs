@@ -18,7 +18,7 @@ namespace cats_and_dogs
                 AddWolf?.Invoke();
             }
         }
-
+        //не исполняется
         public void WolvesCount()
         {
             var wolfSkin = "";

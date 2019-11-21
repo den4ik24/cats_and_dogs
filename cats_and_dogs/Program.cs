@@ -7,7 +7,7 @@ namespace cats_and_dogs
     {
         //public delegate void MethodContainer();
         //public event MethodContainer ;
-        
+        private static readonly NewPastbishe newPastbishe = new NewPastbishe();
 
         static Wolf CrW;
         
@@ -19,35 +19,15 @@ namespace cats_and_dogs
                                Для выбора Волка нажмите ""W"" - (wolf)");
             Console.WriteLine("");
 
-            ConsoleKeyInfo key;
+            ConsoleKeyInfo key; 
+            //NewPastbishe newPastbishe = new NewPastbishe();
 
-            Pastuh pastuh = new Pastuh();
-            NewPastbishe newPastbishe = new NewPastbishe();
-            PastuhWithWeapon<Fork> pastuhFork = new PastuhWithWeapon<Fork>();
-            PastuhWithWeapon<LightSaber> pastuhLightSaber = new PastuhWithWeapon<LightSaber>();
-            PastuhWithWeapon<Dagger> pastuhDagger = new PastuhWithWeapon<Dagger>();
-            //newPastbishe.AddWolf += pastuh.Attention;
             newPastbishe.AddWolf += PastuhCame;
-            //pastuh.GoPastuh += newPastbishe.WolvesCount;
-            pastuhFork.GoPastuh += newPastbishe.WolvesCount;
-            pastuhLightSaber.GoPastuh += newPastbishe.WolvesCount;
-            pastuhDagger.GoPastuh += newPastbishe.WolvesCount;
+            
 
-            //VulnerabilityCloseWeapon vulnerabilityCloseWeapon = new VulnerabilityCloseWeapon();
-            //VulnerabilityLongRageWeapon vulnerabilityLongRageWeapon = new VulnerabilityLongRageWeapon();
-
-            //CyberWolf<VulnerabilityCloseWeapon> cyberWolfVulnerabilityCloseWeapon = new CyberWolf<VulnerabilityCloseWeapon>
-            //{
-            //    Vulnerability = vulnerabilityCloseWeapon
-            //};
-            //CyberWolf<VulnerabilityLongRageWeapon> cyberWolfVulnerabilityLongWeapon = new CyberWolf<VulnerabilityLongRageWeapon>
-            //{
-            //    Vulnerability = vulnerabilityLongRageWeapon
-            //};
-
+                var random = new Random();
             do
             {
-                var random = new Random();
                 var sheepsName = new List<string> { "Чернявка ", "Звездочка ", "Бяшка ", "Кучерявая " };
                 int SheepNameIndex = random.Next(sheepsName.Count);
 
@@ -69,13 +49,9 @@ namespace cats_and_dogs
 
                     Singleton.Instance.Pass();
                 }
-                //int v = 5;
-            //Console.WriteLine("{0}, {1}, {2}", v, v, v);
-            //    Console.WriteLine();
-            //    new System.Collections.ArrayList();
-            //    new List<int>();
             }
             while (key.Key != ConsoleKey.Escape);
+
         }
 
         static Wolf CreateWolf()
@@ -105,6 +81,7 @@ namespace cats_and_dogs
 
         static void PastuhCame()
         {
+
             Fork fork = new Fork();
             LightSaber lightSaber = new LightSaber();
             Dagger dagger = new Dagger();
@@ -134,7 +111,10 @@ namespace cats_and_dogs
                 int pastuhCloseWeaponIndex = random.Next(pastuhCloseWeapon.Count);
                 P = pastuhCloseWeapon[pastuhCloseWeaponIndex];
                 P.Attention();
-                
+                pastuhFork.GoPastuh += newPastbishe.WolvesCount;
+                pastuhLightSaber.GoPastuh += newPastbishe.WolvesCount;
+                pastuhDagger.GoPastuh += newPastbishe.WolvesCount;
+
             }
 
             if (CrW is CyberWolf<VulnerabilityLongRageWeapon>)
@@ -156,22 +136,14 @@ namespace cats_and_dogs
                 int pastuhLongWeaponIndex = random.Next(pastuhLongWeapon.Count);
                 P = pastuhLongWeapon[pastuhLongWeaponIndex];
                 P.Attention();
-                
+                pastuhFlamethrower.GoPastuh += newPastbishe.WolvesCount;
+                pastuhMiniGun.GoPastuh += newPastbishe.WolvesCount;
+                pastuhHeavyMortars.GoPastuh += newPastbishe.WolvesCount;
             }
 
-            //var s = "123";
-            //int a = s.ToNumber();
-            //ABCExt.ToNumber(s);
         }
 
     }
 
-    //public static class ABCExt
-    //{
-    //    public static int ToNumber(this string s)
-    //    {
-    //        return Int32.Parse(s);
-    //    }
-    //}
 }
 
