@@ -10,6 +10,7 @@ namespace cats_and_dogs
         
 
         static Wolf CrW;
+        
 
         static void Main()
         {
@@ -68,9 +69,13 @@ namespace cats_and_dogs
 
                     Singleton.Instance.Pass();
                 }
+                //int v = 5;
+            //Console.WriteLine("{0}, {1}, {2}", v, v, v);
+            //    Console.WriteLine();
+            //    new System.Collections.ArrayList();
+            //    new List<int>();
             }
             while (key.Key != ConsoleKey.Escape);
-
         }
 
         static Wolf CreateWolf()
@@ -153,6 +158,20 @@ namespace cats_and_dogs
                 P.Attention();
                 
             }
+
+            //var s = "123";
+            //int a = s.ToNumber();
+            //ABCExt.ToNumber(s);
         }
+
     }
+
+    //public static class ABCExt
+    //{
+    //    public static int ToNumber(this string s)
+    //    {
+    //        return Int32.Parse(s);
+    //    }
+    //}
 }
+

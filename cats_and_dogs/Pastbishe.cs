@@ -20,9 +20,8 @@ namespace cats_and_dogs
 
         private void AddWolf(IPastbisheAnimal animal)
         {
-            if (animal is Wolf)
+            if (animal is Wolf wOOOlf)
             {
-                var wOOOlf = (Wolf)animal;
                 Wolves.Add(wOOOlf);
 
                 WolfEaterMessage();
@@ -31,10 +30,9 @@ namespace cats_and_dogs
 
         private void AddSheep(IPastbisheAnimal animal)
         {
-            
-            if (animal is Sheep)
+
+            if (animal is Sheep shEEEp)
             {
-                var shEEEp = (Sheep)animal;
                 Sheeps.Add(shEEEp);
             }
         }
