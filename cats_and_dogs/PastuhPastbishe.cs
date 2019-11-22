@@ -18,7 +18,7 @@ namespace cats_and_dogs
                 AddWolf?.Invoke();
             }
         }
-        //не исполняется
+  
         public void WolvesCount()
         {
             var wolfSkin = "";
@@ -33,7 +33,7 @@ namespace cats_and_dogs
             }
 
             Console.WriteLine($"Теперь у пастуха есть {Wolves.Count} {wolfSkin} шкура");
-            Wolves.Clear();
+            //Wolves.Clear();
 
         }
     }

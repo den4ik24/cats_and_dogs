@@ -41,7 +41,7 @@ namespace cats_and_dogs
                 Console.WriteLine($"Пастух прибудет через {step} ход");
             }
         }
-//не участвует
+
         protected virtual void BattleRoar()
         {
             Console.WriteLine($@"Пастух {N} прибыл на пастбище - ""Пятачок, неси ружье! "" ");
